@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram</title>
+    <link rel="stylesheet" href="./src/output.css">
+
+    <link rel="shortcut icon" href="./assets/img/fav.png" type="image/x-icon">
+</head>
+
+<body>
+
+    <section class="bg-[#17212b] h-screen w-full">
+        <div class="container2 flex flex-col gap-[40px] justify-center items-center h-full">
+            <h1 class="text-[35px] font-[600] text-gray-300">Sign in to Telegram</h1>
+            <form id="registerForm" class="flex flex-col gap-[20px] w-[40%]">
+                <input required id="username"
+                    class="w-full border border-[#2b5278] text-white rounded-md p-[10px] bg-transparent" type="text"
+                    placeholder="username">
+                <input required id="password"
+                    class="w-full border border-[#2b5278] text-white rounded-md p-[10px] bg-transparent" type="password"
+                    placeholder="password">
+                <input required id="phone"
+                    class="w-full border border-[#2b5278] text-white rounded-md p-[10px] bg-transparent" type="text"
+                    placeholder="+998">
+                <button
+                    class="bg-[#2b5278] p-[10px] rounded-md text-white active:scale-[.98] hover:bg-[#336ca5] transition duration-[.2s]"
+                    type="submit">Sign in</button>
+            </form>
+            <p class="text-white">Do you have an account ? <a href="./login.html" class="underline text-[#336ca5]">Log
+                    in</a></p>
+        </div>
+    </section>
+
+
+    <script type="module" src="./js/register.js"></script>
+</body>
+
+</html>

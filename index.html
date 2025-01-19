@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Telegram web</title>
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="./src/output.css">
+
+    <link rel="shortcut icon" href="./assets/img/fav.png" type="image/x-icon">
+</head>
+
+<body class="h-screen overflow-hidden flex items-center justify-center">
+    <div class="relative flex w-full h-screen overflow-hidden">
+
+        <!-- left -->
+        <div class="relative flex flex-col  h-full bg-[#17212b] border-r border-[#00000065]  shadow-xl md:block transform transition-all duration-500 ease-in-out"
+            style="width: 24rem">
+            <!-- left navbar -->
+            <div class="flex justify-between px-3 pt-1 text-white">
+                <div class="flex items-center w-full py-2">
+                    <label for="left"
+                        class="text-[#fff] cursor-pointer hover:text-[#2b5278] flex justify-center items-center">
+                        <i class='bx bx-menu text-[30px]'></i>
+                    </label>
+                    <div class="relative flex items-center w-full pl-2 overflow-hidden text-[#fff]">
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-4">
+                            <button type="submit" class="p-1 focus:shadow-none">
+                                <i class='bx bx-search-alt-2'></i>
+                            </button>
+                        </span>
+                        <input type="text"
+                            class="w-full py-2 pl-12 text-sm text-white bg-[#242f3d] border border-transparent appearance-none rounded-tg focus:border-blue-500  focus:shadow-outline-blue"
+                            style="border-radius: 25px" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- left links -->
+            <div>
+                <ul class="flex flex-row items-center px-2 list-none select-none">
+                    <li class="flex-auto px-1 mx-1 text-center rounded-t-lg cursor-pointer last:mr-0 group text-white">
+                        <a
+                            class="flex items-center justify-center py-2 text-xs font-semibold leading-normal tracking-wide border-b-2 border-blue-500">
+                            All
+                        </a>
+                    </li>
+                    <li class="flex-auto px-1 mx-1 text-center rounded-t-lg cursor-pointer last:mr-0 group text-white">
+                        <a
+                            class="flex items-center justify-center py-2 text-xs font-semibold leading-normal tracking-wide border-b-2 border-transparent group-hover:border-blue-500">
+                            Work
+                        </a>
+                    </li>
+                    <li class="flex-auto px-1 mx-1 text-center rounded-t-lg cursor-pointer last:mr-0 group text-white">
+                        <a
+                            class="flex items-center justify-center  py-2 text-xs font-semibold leading-normal tracking-wide border-b-2 border-transparent group-hover:border-blue-500">
+                            Private
+                        </a>
+                    </li>
+                    <li class="flex-auto px-1 mx-1 text-center rounded-t-lg cursor-pointer last:mr-0 group text-white">
+                        <a
+                            class="flex items-center justify-center  py-2 text-xs font-semibold leading-normal tracking-wide border-b-2 border-transparent group-hover:border-blue-500">
+                            Groups
+                        </a>
+                    </li>
+                    <li class="flex-auto px-1 mx-1 text-center rounded-t-lg cursor-pointer last:mr-0 group text-white">
+                        <a
+                            class="flex items-center justify-center py-2 text-xs font-semibold leading-normal tracking-wide border-b-2 border-transparent group-hover:border-blue-500">
+                            Channels
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- left users -->
+            <div
+                class="relative mt-2 mb-4 overflow-x-hidden overflow-y-auto scrolling-touch lg:max-h-sm scrollbar-w-2 scrollbar-track-gray-lighter scrollbar-thumb-rounded scrollbar-thumb-gray">
+                <div id="sidebarUsers" class="flex flex-col gap-[10px]  w-full h-screen px-2 select-none">
+
+                    <!-- users -->
+
+                </div>
+            </div>
+
+
+            <div class="fixed bottom-0 right-0 z-40 mb-6 mr-4">
+                <button
+                    class="flex items-center justify-center w-12 h-12 mr-3 text-xl font-semibold text-white bg-blue-500 rounded-full flex-no-shrink">
+                    <i class="bx bxs-pencil"></i>
+                </button>
+            </div>
+
+        </div>
+
+
+        <!-- Main Chat Container -->
+        <div id="chatBox" class="relative flex flex-col flex-1">
+            <!-- default bg -->
+            <div id="defaultBg" class="w-full h-full bg-[#0e1621]"></div>
+        </div>
+
+    </div>
+
+
+    <!-- sidebar profile -->
+    <input type="checkbox" name="" id="left" class="hidden">
+    <div
+        class="h-full px-[10px] fixed left-[-100%] text-[#fff] flex flex-col pb-2 bg-[#2b5278] border-[#00000065] xl:block w-[24rem]">
+        <div class="flex items-center justify-between w-full">
+            <label for="left" class="cursor-pointer flex justify-center items-center">
+                <i class="bx bx-x text-[25px]"></i>
+            </label>
+
+            <div class="ml-4 mr-auto text-lg font-medium">Info</div>
+
+            <button type="button" class="p-2 flex justify-center items-center">
+                <i id="editBtn" class="bx bxs-pencil text-[20px]"></i>
+            </button>
+
+            <button type="button" class="p-2 flex justify-center items-center ml-1">
+                <i class='bx bx-dots-vertical-rounded text-[23px]'></i>
+            </button>
+
+        </div>
+
+        <div>
+            <div class="flex justify-center mb-4">
+                <div id="showAvatarImg"
+                    class="cursor-pointer content-center block w-32 h-32 overflow-hidden text-center rounded-full">
+                    <!-- user avatar  -->
+                    <img id="ownAvatar" class="content-center object-cover w-full h-full  rounded-full" alt="">
+                </div>
+            </div>
+
+            <!-- avatar box -->
+            <div id="avatarImgDiv" class="hidden h-[100vh] w-full justify-center items-center fixed top-0 left-0 bg-[#000000b9] backdrop-blur-[5px] z-[999999]">
+                <i id="closeAvatarImgDiv" class="bx bx-x text-white absolute top-[20px] right-[20px] text-[40px] cursor-pointer"></i>
+                
+                <img id="currentAvatarImg" src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt="" class="h-[80%] w-[80%] object-contain">
+                
+                <button id="deleteAvatarImgBtn" class="bg-[#2b5278] p-[5px] flex justify-center items-center gap-[4px] font-[500] rounded-md cursor-pointer absolute bottom-[20px] right-[20px]">
+                    Delete avatar <i class="bx bx-trash"></i>
+                </button>
+            </div>
+
+
+            <p class="text-lg font-semibold text-center" id="userInfoName"></p>
+        </div>
+
+        <div class="flex flex-col gap-[20px] pt-5">
+            <div class="flex items-center w-full">
+                <div class="rounded-full">
+                    <i class="bx bx-user text-[30px] text-[#17212b]"></i>
+                </div>
+                <div>
+                    <div class="mt-1 ml-4 mr-auto text-sm font-semibold leading-none text-[#17212b]">Username</div>
+                    <div class="ml-4 mr-auto text-sm " id="userInfoBottomName">@username</div>
+                </div>
+            </div>
+
+            <div class="flex items-center w-full">
+                <div class="rounded-full">
+                    <i class="bx bx-phone text-[30px] text-[#17212b]"></i>
+                </div>
+                <div class="ml-4">
+                    <div class="mt-1 mr-auto text-sm font-semibold leading-none text-[#17212b]">Phone</div>
+                    <div class="mr-auto text-sm" id="userTel">+998(00)-000-00-00</div>
+                </div>
+            </div>
+
+        </div>
+
+        <button id="logoutBtn"
+            class="flex justify-between items-center w-[94%] absolute bottom-[20px] bg-[#17212b] p-[10px] rounded-md">
+            <p>Log out</p>
+            <i class="bx bx-exit"></i>
+        </button>
+    </div>
+
+
+
+
+    <!-- edit form -->
+    <div id="editFormDisplay"
+        class="h-[100vh] w-full hidden justify-center items-center bg-[#0000009c] backdrop-blur-[7px] z-[999999] fixed left-0 top-0">
+
+        <form id="editForm" class="relative p-[20px] bg-[#17212b] rounded-xl w-[30%] flex flex-col gap-[20px]">
+            <i
+                class="closeEditBtn cursor-pointer bx bx-left-arrow-alt absolute top-[10px] left-[10px] text-white text-[30px]"></i>
+            <i class="closeEditBtn cursor-pointer bx bx-x absolute top-[10px] right-[10px] text-white text-[30px]"></i>
+
+            <div class="self-center relative">
+                <div class="h-[130px] w-[130px] rounded-full overflow-hidden">
+                    <img id="editAvatarCurrentImg"
+                        src="https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg" alt=""
+                        class="h-full w-full object-cover">
+                </div>
+                <label for="editAvatarImg"
+                    class="absolute bottom-0 right-[10px] border cursor-pointer h-[35px] w-[35px] bg-[#2b5278] flex justify-center items-center rounded-full text-white">
+                    <i class="bx bxs-camera"></i>
+                </label>
+                <input type="file" id="editAvatarImg" class="hidden">
+            </div>
+
+            <label for="editName"
+                class="cursor-pointer hover:bg-[#232e3c] p-[10px] rounded-md flex text-white justify-between items-center gap-[30px]">
+                <i class="bx bx-user text-[25px]"></i>
+                <input required id="editName" type="text"
+                    class="border-none outline-none bg-transparent text-[20px] text-end" value="@username">
+            </label>
+
+            <hr class="opacity-5">
+
+            <label for="editPhone"
+                class="flex text-white justify-between items-center gap-[30px] hover:bg-[#232e3c] cursor-pointer p-[10px] rounded-md">
+                <i class="bx bx-phone text-[25px]"></i>
+                <input required id="editPhone" type="text"
+                    class="border-none outline-none bg-transparent text-[20px] text-end" value="+998(00)-000-00-00">
+            </label>
+
+            <hr class="opacity-5">
+
+            <label for="editPassword"
+                class="flex text-white justify-between items-center gap-[30px] hover:bg-[#232e3c] cursor-pointer p-[10px] rounded-md">
+                <i class="bx bx-lock-alt text-[25px]"></i>
+                <input required id="editPassword" type="password"
+                    class="border-none outline-none bg-transparent text-[20px] text-end">
+            </label>
+
+            <button
+                class="bg-[#2b5278] text-white p-[10px] rounded-md text-[17px] font-[500] hover:bg-[#1c3957]">Save</button>
+
+        </form>
+
+    </div>
+
+
+    <script src="./js/app.js"></script>
+</body>
+
+</html>
