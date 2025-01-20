@@ -46,7 +46,7 @@ fetch("https://6784a0ac1ec630ca33a4f300.mockapi.io/users")
             leftUserDiv.classList.add("leftUserDiv")
             leftUserDiv.id = value.id
             leftUserDiv.innerHTML = `
-                <div class="flex flex-no-wrap items-center pr-3 rounded-lg cursor-pointer mt-200 bg-[#172e46] py-65 hover:bg-[#2b5278]"
+                <div class="flex flex-no-wrap items-center pr-3 rounded-lg cursor-pointer mt-200 bg-[#172e46] py-65 "
                     style="padding-top: 0.65rem; padding-bottom: 0.65rem">
                     <div class="flex justify-between w-full">
                         <div class="flex justify-between w-full">
@@ -122,7 +122,7 @@ fetch("https://6784a0ac1ec630ca33a4f300.mockapi.io/users")
                         <form id="messageForm" class="absolute bg-[#17212b] bottom-0 bg-gray-200x flex items-center w-full p-2">
                             <input id="messageText" type="text" required class="w-full py-2 px-[10px] pr-[50px] text-sm bg-transparent placeholder-gray-500 text-white" style="border-radius: 25px" placeholder="Write a message...">
                             <span class="absolute inset-y-0 right-0 flex items-center pr-6">
-                                <button type="submit" class="text-[#2b5278] hover:text-[#3463aa]">
+                                <button type="submit" class="text-[#2b5278]">
                                     <i class='bx bxs-send text-[25px]'></i>
                                 </button>
                             </span>
