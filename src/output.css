@@ -740,9 +740,7 @@ video {
   height: 100vh;
 }
 
-.h-\[\] {
-  height: ;
-}
+
 
 .h-\[80\%\] {
   height: 80%;
@@ -796,9 +794,7 @@ video {
   width: 100%;
 }
 
-.w-\[\] {
-  width: ;
-}
+
 
 .w-\[80\%\] {
   width: 80%;
@@ -1037,9 +1033,6 @@ video {
   background-color: #000000b9;
 }
 
-.bg-\[\] {
-  background-color: ;
-}
 
 .object-contain {
   -o-object-fit: contain;

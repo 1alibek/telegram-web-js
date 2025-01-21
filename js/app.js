@@ -206,38 +206,13 @@ fetch("https://676b9e09bc36a202bb851c2c.mockapi.io/n17/users")
                                         `;
                   messageBox.appendChild(messageP);
 
-                  let deleteBtnDiv = document.getElementById("deleteBtnDiv");
 
-                  messageP.addEventListener("dblclick", () => {
-                    messageP.classList.toggle("deleteMessageBg");
-                    deleteBtnDiv.classList.add("showBtn");
-
-                    const selectedMessages =
-                      document.querySelectorAll(".deleteMessageBg");
-
-                    deleteBtnDiv.addEventListener("click", () => {
-                      selectedMessages.forEach((message) => {
-                        const messageId = message.id;
-
-                        fetch(
-                          `https://676b9e09bc36a202bb851c2c.mockapi.io/n17/message/${messageId}`,
-                          {
-                            method: "DELETE",
-                          }
-                        )
-                          .then(() => message.remove())
-                          .catch((err) => console.log(err));
-                      });
-
-                      deleteBtnDiv.classList.remove("showBtn");
-                    });
-                  });
+                
                 }
               });
             });
         }
 
-        showMessages();
       });
     });
   });
