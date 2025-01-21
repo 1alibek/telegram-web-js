@@ -34,16 +34,16 @@ form.addEventListener("submit", (e) => {
         avatar: "https://static.vecteezy.com/system/resources/previews/009/292/244/non_2x/default-avatar-icon-of-social-media-user-vector.jpg",
     }
 
-    fetch("https://6784a0ac1ec630ca33a4f300.mockapi.io/users", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(userData),
+    fetch("https://676b9e09bc36a202bb851c2c.mockapi.io/n17/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userData),
     })
-        .then((res) => res.json())
-        .then(() => {
-            window.location.href = "./login.html"
-        })
-        .catch((err) => console.log(err))
+      .then((res) => res.json())
+      .then(() => {
+        window.location.href = "./login.html";
+      })
+      .catch((err) => console.log(err));
 })
